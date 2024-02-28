@@ -1,0 +1,10 @@
+<ul class="flex m-4">
+   @for (book of data; track book.id) {
+    <li class="list-none border m-4">
+        <a href="{{book.pdf}}" target="_blank">
+        <img src={{book.cover}} alt=""  class="w-200 h-200 border-b-2">
+        </a>
+        <h3  class="text-emerald-800 text-center items-center justify-center">{{book.name}}</h3>
+    </li>
+    }   
+</ul>
