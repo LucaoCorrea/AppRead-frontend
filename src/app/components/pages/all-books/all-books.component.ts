@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { BookService } from '../../../services/book.service';
+
 
 @Component({
   selector: 'app-all-books',
@@ -12,11 +13,15 @@ import { BookService } from '../../../services/book.service';
 export class AllBooksComponent implements OnInit {
   constructor(private bookservice: BookService) {}
 
+  
+
   data: any;
 
   ngOnInit(): void {
     this.getAllBooks();
+
   }
+
 
   getAllBooks() {
     this.bookservice.getAllBooks().subscribe({
@@ -26,4 +31,5 @@ export class AllBooksComponent implements OnInit {
       },
     });
   }
-}
+  
+  }

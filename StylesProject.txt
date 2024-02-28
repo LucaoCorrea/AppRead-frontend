@@ -1,1 +1,14 @@
 Paleta: #011526 | #c9dff2 | #5496bf | #75b2bf | #025159
+
+Paleta Tailwind: 
+bg-sky-50	background-color: rgb(240 249 255);
+bg-sky-100	background-color: rgb(224 242 254);
+bg-sky-200	background-color: rgb(186 230 253);
+bg-sky-300	background-color: rgb(125 211 252);
+bg-sky-400	background-color: rgb(56 189 248);
+bg-sky-500	background-color: rgb(14 165 233);
+bg-sky-600	background-color: rgb(2 132 199);
+bg-sky-700	background-color: rgb(3 105 161);
+bg-sky-800	background-color: rgb(7 89 133);
+bg-sky-900	background-color: rgb(12 74 110);
+bg-sky-950	background-color: rgb(8 47 73);

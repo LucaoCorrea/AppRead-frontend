@@ -1,10 +1,21 @@
-<ul class="flex m-4">
-   @for (book of data; track book.id) {
-    <li class="list-none border m-4">
-        <a href="{{book.pdf}}" target="_blank">
-        <img src={{book.cover}} alt=""  class="w-200 h-200 border-b-2">
-        </a>
-        <h3  class="text-emerald-800 text-center items-center justify-center">{{book.name}}</h3>
-    </li>
-    }   
+<ul class="flex m-4 ease-in-out duration-100">
+  @for (book of data; track book.id) {
+  {{
+    book.id
+  }}
+  <li
+    class="list-none border m-4 bg-black hover:scale-110 hover:ease-in-out duration-100"
+  >
+    <a href="/desc">
+      <img
+        src="{{ book.cover }}"
+        alt=""
+        class="w-200 h-200 border-b-2 shadow-xl shadow-black"
+      />
+    </a>
+    <h3 class="text-white text-center items-center justify-center">
+      {{ book.name }}
+    </h3>
+  </li>
+  }
 </ul>

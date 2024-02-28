@@ -23,4 +23,12 @@ export class BookService {
       `${apiEndpoint.BookEndpoint.getBookBySearch}?name=${name}`
     );
   }
+
+  getIdBook(
+    id: number
+  ): Observable<BookResponse> {
+    return this.http.get<BookResponse>(
+      `${apiEndpoint.BookEndpoint.getIdBook}?id=${id}`
+    );
+  }
 }

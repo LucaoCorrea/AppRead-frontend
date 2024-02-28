@@ -7,6 +7,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { AllBooksComponent } from './components/pages/all-books/all-books.component';
 import { SearchedBooksComponent } from './components/pages/searched-books/searched-books.component';
+import { DescComponent } from './components/desc/desc.component';
 
 
 export const routes: Routes = [
@@ -24,6 +25,11 @@ export const routes: Routes = [
                 title: 'Search - Books',
                 component: SearchedBooksComponent,
                 pathMatch: 'full', 
+            },
+            {
+              path: 'desc',
+              title: 'Descrição',
+              component: DescComponent,
             },
             {
               path: 'profile',
