@@ -1,3 +1,12 @@
-@for (book of data; track book.id) {
-    <h3>{{book.cover}}</h3>
-}
+<div class="p-10">
+  <div class="flex">
+    <img src="{{ data.cover }}" />
+    <div class=" flex flex-col items-center p-5 justify-around text-center">
+    <h1 class="text-center">{{ data.name }}</h1>
+    <h2>{{ data.description }}</h2>
+    <h2>{{ data.writer }}</h2>
+    <h2>{{ data.pub }}</h2>
+    <h2>{{ data.year }}</h2>
+    </div>
+  </div>
+</div>

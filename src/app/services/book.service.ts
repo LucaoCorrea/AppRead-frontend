@@ -28,7 +28,7 @@ export class BookService {
     id: number
   ): Observable<BookResponse> {
     return this.http.get<BookResponse>(
-      `${apiEndpoint.BookEndpoint.getIdBook}?id=${id}`
+      `${apiEndpoint.BookEndpoint.getIdBook}/${id}`
     );
   }
 }

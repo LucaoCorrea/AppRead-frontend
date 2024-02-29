@@ -14,10 +14,9 @@ export class DescComponent implements OnInit{
 
   data: any;
 
-  @Input() id = 1;
+  @Input() id = 0;
 
   ngOnInit(): void {
-    this.getIdBook();
     this.getIdBook();
   }
 

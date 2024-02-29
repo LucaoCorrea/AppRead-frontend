@@ -5,6 +5,6 @@ export const apiEndpoint = {
   BookEndpoint: {
     getAllBooks: `${API_URL}/api/v1/book`,
     getBookBySearch: `${API_URL}/api/v1/book/search`,
-    getIdBook: `${API_URL}/api/v1/book/id`,
+    getIdBook: `${API_URL}/api/v1/book`,
   },
 };

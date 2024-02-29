@@ -27,7 +27,7 @@ export const routes: Routes = [
                 pathMatch: 'full', 
             },
             {
-              path: 'desc',
+              path: ':id',
               title: 'Descrição',
               component: DescComponent,
             },

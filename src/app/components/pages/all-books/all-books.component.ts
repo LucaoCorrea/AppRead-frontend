@@ -13,12 +13,13 @@ import { BookService } from '../../../services/book.service';
 export class AllBooksComponent implements OnInit {
   constructor(private bookservice: BookService) {}
 
-  
+  @Input() id = 1;
 
   data: any;
 
   ngOnInit(): void {
     this.getAllBooks();
+    this.getIdBook();
 
   }
 
@@ -31,5 +32,19 @@ export class AllBooksComponent implements OnInit {
       },
     });
   }
+
+  getIdBook(){
+    this.bookservice
+    .getIdBook(this.id)
+    .subscribe({
+      next: (data: any) => {
+        this.data = data;
+        console.log(data);
+        console.log(
+          this.bookservice.getIdBook(this.id)
+        );
+      },
+    });
+  };  
   
   }
