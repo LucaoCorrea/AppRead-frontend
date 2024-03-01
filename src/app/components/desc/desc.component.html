@@ -1,12 +1,13 @@
-<div class="p-10">
-  <div class="flex">
-    <img src="{{ data.cover }}" />
-    <div class=" flex flex-col items-center p-5 justify-around text-center">
-    <h1 class="text-center">{{ data.name }}</h1>
-    <h2>{{ data.description }}</h2>
-    <h2>{{ data.writer }}</h2>
-    <h2>{{ data.pub }}</h2>
-    <h2>{{ data.year }}</h2>
-    </div>
+<div class="p-10 flex">
+  <div class="flex flex-col w-fit">
+    <h1 class="text-center text-2xs">{{ data.name }}</h1>
+    <img src="{{ data.cover }}" class="rounded-2xl" />
+  </div>
+  <div class="flex flex-col text-center justify-around m-20 items-center">
+    <h2>Descrição: {{ data.description }}</h2>
+    <h2>Escritor(a): {{ data.writer }}</h2>
+    <h2>Editora: {{ data.pub }}</h2>
+    <h2>Data de lançamento: {{ data.year }}</h2>
+    <a href={{data.pdf}} target="_blank" class="flex justify-center items-center text-ls hover:bg-sky-800 duration-800  bg-sky-600 rounded-xl w-40 h-12 text-sky-50">Ler Online</a>
   </div>
 </div>

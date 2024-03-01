@@ -1,14 +1,32 @@
-<ul class="flex m-4 ease-in-out duration-100">
+<div
+  class="bg-sky-800 w-auto h-screen text-sky-100 flex justify-center items-center flex-col mb-10 shadow-sky-900 shadow-md"
+>
+  <h1 class="text-9xl flex font-slackside text-sky-500">Zoe</h1>
+  <h2 class="flex text-sm text-sky-100">
+    Seu Aplicativo de leitura fácil e rápido!
+  </h2>
+  <div class="">
+    <img src="../../../../assets/cat.png" class="w-96 h-96" />
+  </div>
+  <div class="flex text-center flex-col opacity-80">
+    <h2 class="text-sm/10 opacity-50">Deslize para baixo e aproveite o melhor que temos!</h2>
+    <h1 class="text-5xl mb-7 font-bold animate-bounce "> &#709;</h1>
+  </div>
+</div>
+
+<h1 class="flex text-3xl text-center items-center justify-center">
+  Livros Em Alta
+</h1>
+<ul class="flex m-4 ease-in-out duration-500">
   @for (book of data; track book.id) {
   <li
-    class="list-none border m-4 bg-black hover:scale-110 hover:ease-in-out duration-100"
+    class="list-none border m-4 bg-black hover:scale-110 hover:ease-in-out duration-500 rounded-3xl"
   >
-    <a href="book/{{book.id}}">
+    <a href="book/{{ book.id }}">
       <img
         src="{{ book.cover }}"
         alt=""
-        
-        class="w-200 h-200 border-b-2 shadow-xl shadow-black"
+        class="border-b-2 shadow-xl shadow-black rounded-3xl"
       />
     </a>
     <h3 class="text-white text-center items-center justify-center">
