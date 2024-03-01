@@ -1,12 +1,9 @@
 <ul class="flex m-4 ease-in-out duration-100">
   @for (book of data; track book.id) {
-  {{
-    book.id
-  }}
   <li
     class="list-none border m-4 bg-black hover:scale-110 hover:ease-in-out duration-100"
   >
-    <a href={{book.id}}>
+    <a href="book/{{book.id}}">
       <img
         src="{{ book.cover }}"
         alt=""

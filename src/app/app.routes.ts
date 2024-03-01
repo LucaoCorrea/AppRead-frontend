@@ -17,7 +17,7 @@ export const routes: Routes = [
         children: [
             {
                 path: '',
-                title: 'Book',
+                title: 'Zoe | Home',
                 component: AllBooksComponent, 
             },
             {
@@ -27,13 +27,13 @@ export const routes: Routes = [
                 pathMatch: 'full', 
             },
             {
-              path: ':id',
-              title: 'Descrição',
+              path: 'book/:id',
+              title: 'Zoe | Descrição',
               component: DescComponent,
             },
             {
               path: 'profile',
-              title: 'Profile',
+              title: 'Zoe | Perfil',
               component: ProfileComponent,
             },
           ],

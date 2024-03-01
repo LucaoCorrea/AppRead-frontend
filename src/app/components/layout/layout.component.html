@@ -1,37 +1,42 @@
-<nav class="bg-sky-900 text-white shadow-md mb-6 shadow-gray-300">
-  <div class="flex items-center justify-between p-6">
-    <img
-      src="assets/Logo.png"
-      alt="Logo"
-      class="text-3xl font-bold hover:font-normal rounded-2xl hover:translate-x-0 hover:cursor-pointer hover:bg-sky-800 hover:ease-in-out duration-100"
+<nav class="bg-sky-950 text-white shadow-md mb-6 shadow-gray-300">
+  <div class="flex items-center justify-between p-6 h-24">
+    <div
+      class="flex items-center cursor-pointer hover:opacity-80 hover:ease-in-out duration-200"
       routerLink="/"
-      routerLinkActive="active"
-      ariaCurrentWhenActive="page"
-    />
+    >
+      <img
+        src="assets/Logo.png"
+        alt="Logo"
+        class="m-2 w-16 h-16 text-3xl font-bold hover:font-normal rounded-2xl"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+      />
+      <h1 class="m-2 text-5xl font-slackside text-sky-500">Zoe</h1>
+    </div>
     <ul class="flex items-center space-x-6 ease-in duration-100 cursor-pointer">
       <li
-        class="item hover:text-gray-200 hover:ease-in duration-100"
+        class="item hover:text-sky-500 hover:ease-in duration-100"
         routerLink="/"
         routerLinkActive="active"
         ariaCurrentWhenActive="page"
       >
-        Home
+      <mat-icon>home</mat-icon>
       </li>
       <li
-        class="item hover:text-gray-200 hover:ease-in duration-100"
+        class="item hover:text-sky-500 hover:ease-in duration-100"
         routerLink="/profile"
         routerLinkActive="active"
         ariaCurrentWhenActive="page"
       >
-        Perfil
+        <mat-icon>perm_identity</mat-icon>
       </li>
       <li
-        class="item hover:text-gray-200 hover:ease-in duration-100"
+        class="item hover:text-sky-500 hover:ease-in duration-100"
         routerLink="/profile"
         routerLinkActive="active"
         ariaCurrentWhenActive="page"
       >
-        Sair
+        <mat-icon>logout</mat-icon>
       </li>
     </ul>
   </div>

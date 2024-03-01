@@ -5,7 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {},
-  },
+    fontFamily: {
+        'slackside': ['Slackside One']
+      }
+    },
   plugins: [],
 }
 
