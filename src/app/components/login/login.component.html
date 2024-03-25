@@ -1,1 +1,28 @@
-<p>login works!</p>
+<div class="flex h-screen bg-sky-900">
+    <div class="w-full max-w-xs m-auto bg-sky-100 rounded p-5">  
+          <header class="flex items-center mb-5 ">
+            <img class="w-20 mx-auto" src="../../../assets/Logo.png" />
+            <h1 class="bg-sky-500 text-sky-500 h-20 m-4 rounded-2xl">.</h1>
+            <div class="text-center">
+            <h1 class="text-7xl font-slackside text-sky-500">Zoe</h1>
+            <h2 class="text-sky-700 text-xs">Sua biblioteca digital</h2>
+            </div>
+          </header>   
+          <form>
+            <div>
+                <label class="block mb-2 text-sky-500" for="email" >Email</label>
+                <input required class="w-full p-2 mb-6 text-sky-700 border-b-2 border-sky-500 outline-none focus:bg-gray-300" type="email" name="email">
+              </div>
+            <div>
+              <label class="block mb-2 text-sky-500" for="password">Senha</label>
+              <input required class="w-full p-2 mb-6 text-sky-700 border-b-2 border-sky-500 outline-none focus:bg-gray-300" type="password" name="password">
+            </div>
+            <div>          
+              <input class="w-full bg-sky-700 hover:bg-sky-900 text-white font-bold py-2 px-4 mb-6 rounded cursor-pointer" type="submit">
+            </div>       
+          </form>  
+          <footer>
+            <a class="text-sky-700 hover:text-sky-500 text-sm float-right" routerLink="/register">Não tem uma conta? Faça o Registro</a>
+          </footer>   
+        </div>
+    </div>
