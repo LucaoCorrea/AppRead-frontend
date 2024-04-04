@@ -1,41 +1,38 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink, Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { subscribe } from 'diagnostics_channel';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterLink, CommonModule,  ReactiveFormsModule],
+  imports: [RouterLink, CommonModule, ReactiveFormsModule, FormsModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrl: './login.component.scss',
 })
+export class LoginComponent {
+  email = '';
+  password = '';
+  authService = inject(AuthService);
+  router = inject(Router);
 
-export class LoginComponent implements OnInit {
-  loginForm = new FormGroup({
-    email: new FormControl(''),
-    password: new FormControl(''),
-  });
-  constructor(private auth: AuthService, private router: Router) {}
+  login(event: Event) {
+    event.preventDefault();
+    console.log(`Login: ${this.email} / ${this.password}`);
 
-  ngOnInit(): void {
-    if (this.auth.isLoggedIn()) {
-      this.router.navigate(['admin']);
-    }
-  }
-  onSubmit(): void {
-    if (this.loginForm.valid) {
-      this.auth.login(this.loginForm.value).subscribe(
+    this.authService
+      .login({
+        email: this.email,
+        password: this.password,
+      })
+      .subscribe(
         (result) => {
           console.log(result);
-          this.router.navigate(['/admin']);
+          this.router.navigate(['/']);
         },
-        (err: Error) => {
-          alert(err.message);
-        }
       );
-    }
   }
 }

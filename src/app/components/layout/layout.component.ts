@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
+import { AuthService } from '../../services/auth.service';
 
 
 @Component({
@@ -12,5 +13,9 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './layout.component.scss'
 })
 export class LayoutComponent {
-
+  authService = inject(AuthService);
+  
+  logout(){
+    this.authService.logout();
+  }
 }

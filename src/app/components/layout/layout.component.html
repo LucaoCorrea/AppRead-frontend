@@ -32,9 +32,9 @@
       </li>
       <li
         class="item hover:text-sky-500 hover:ease-in duration-100"
-        routerLink="/profile"
         routerLinkActive="active"
         ariaCurrentWhenActive="page"
+        (click)="logout()"
       >
         <mat-icon>logout</mat-icon>
       </li>
