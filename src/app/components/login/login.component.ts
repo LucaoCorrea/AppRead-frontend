@@ -4,7 +4,6 @@ import { AuthService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { subscribe } from 'diagnostics_channel';
 
 @Component({
   selector: 'app-login',

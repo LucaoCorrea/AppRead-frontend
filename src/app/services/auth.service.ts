@@ -12,6 +12,7 @@ export class AuthService {
 
   private readonly TOKEN = 'token';
   private loggedUser?: string;
+  private RegistUser?: string;
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
   private router = inject(Router);
   private http = inject(HttpClient);
@@ -55,17 +56,34 @@ export class AuthService {
     this.isAuthenticatedSubject.next(true);
   }
 
+  private doRegisterUser(firstname: string,email: string, password: string, token: any) {
+    this.RegistUser = firstname, email, password;
+    this.storeJwtToken(token);
+    this.isAuthenticatedSubject.next(true);
+  }
+
   private storeJwtToken(token: string) {
     localStorage.setItem(this.TOKEN, token);
   }
 
-  login(user: { email: string; password: string }): Observable<any> {
+  login(user: {email: string; password: string }): Observable<any> {
     console.log();
     return this.http
       .post( `${apiEndpoint.AuthEndpoint.login}`, user)
       .pipe(
         tap((tokens: any) =>
           this.doLoginUser(user.email, JSON.stringify(tokens))
+        )
+      );
+  }
+
+  register(user: { firstname: string, email: string; password: string }): Observable<any> {
+    console.log();
+    return this.http
+      .post( `${apiEndpoint.AuthEndpoint.register}`, user)
+      .pipe(
+        tap((tokens: any) =>
+          this.doRegisterUser(user.firstname, user.email, user.password ,JSON.stringify(tokens))
         )
       );
   }
