@@ -7,6 +7,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { AllBooksComponent } from './components/pages/all-books/all-books.component';
 import { SearchedBooksComponent } from './components/pages/searched-books/searched-books.component';
 import { DescComponent } from './components/desc/desc.component';
+import { ViewComponent } from './components/view/view.component';
 
 export const routes: Routes = [
   {
@@ -38,6 +39,11 @@ export const routes: Routes = [
         path: 'book/:id',
         title: 'Zoe | Descrição',
         component: DescComponent,
+      },
+      {
+        path: 'book/:id/view',
+        title: 'Zoe | View',
+        component: ViewComponent,
       },
       {
         path: 'profile',

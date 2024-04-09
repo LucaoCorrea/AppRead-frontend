@@ -1,38 +1,39 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { BookService } from '../../services/book.service';
 
+import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+import { RouterLink } from '@angular/router';
+
 @Component({
   selector: 'app-desc',
   standalone: true,
-  imports: [],
+  imports: [NgxExtendedPdfViewerModule, RouterLink ],
   providers: [BookService],
   templateUrl: './desc.component.html',
-  styleUrl: './desc.component.scss'
+  styleUrl: './desc.component.scss',
 })
-export class DescComponent implements OnInit{
-  constructor(private bookservice: BookService) {}
+export class DescComponent implements OnInit {
+  constructor(private bookservice: BookService) {
+
+  }
 
   data: any;
 
   @Input() id = 0;
 
+
+
   ngOnInit(): void {
     this.getIdBook();
   }
 
-  getIdBook(){
-    this.bookservice
-    .getIdBook(this.id)
-    .subscribe({
+  getIdBook() {
+    this.bookservice.getIdBook(this.id).subscribe({
       next: (data: any) => {
         this.data = data;
         console.log(data);
-        console.log(
-          this.bookservice.getIdBook(this.id)
-        );
+        console.log(this.bookservice.getIdBook(this.id));
       },
     });
-  };
-
-  
+  }
 }
