@@ -10,8 +10,12 @@
           </header>     
           <form (submit)="register($event)">
             <div>
-              <label class="block mb-2 text-sky-500" for="username">Nome</label>
+              <label class="block mb-2 text-sky-500" for="username">Primeiro Nome</label>
               <input required class="w-full p-2 mb-6 text-sky-700 border-b-2 border-sky-500 outline-none focus:bg-gray-300" type="text" name="username" [(ngModel)]="firstname">
+            </div>
+            <div>
+              <label class="block mb-2 text-sky-500" for="username">último Nome</label>
+              <input required class="w-full p-2 mb-6 text-sky-700 border-b-2 border-sky-500 outline-none focus:bg-gray-300" type="text" name="username" [(ngModel)]="lastname">
             </div>
             <div>
                 <label class="block mb-2 text-sky-500" for="email" >Email</label>

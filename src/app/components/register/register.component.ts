@@ -14,8 +14,10 @@ import { CommonModule } from '@angular/common';
 })
 export class RegisterComponent {
   firstname= '';
+  lastname='';
   email = '';
   password = '';
+  role = 'USER';
   authService = inject(AuthService);
   router = inject(Router);
 
@@ -26,8 +28,10 @@ export class RegisterComponent {
     this.authService
       .register({
         firstname: this.firstname,
+        lastname: this.lastname,
         email: this.email,
         password: this.password,
+        role: this.role
       })
       .subscribe(
         (result) => {

@@ -56,8 +56,8 @@ export class AuthService {
     this.isAuthenticatedSubject.next(true);
   }
 
-  private doRegisterUser(firstname: string,email: string, password: string, token: any) {
-    this.RegistUser = firstname, email, password;
+  private doRegisterUser(firstname: string, lastname: string ,email: string, password: string, role: string ,token: any) {
+    this.RegistUser = firstname, lastname, email, password;
     this.storeJwtToken(token);
     this.isAuthenticatedSubject.next(true);
   }
@@ -77,13 +77,13 @@ export class AuthService {
       );
   }
 
-  register(user: { firstname: string, email: string; password: string }): Observable<any> {
+  register(user: { firstname: string, lastname: string,  email: string; password: string, role: string }): Observable<any> {
     console.log();
     return this.http
       .post( `${apiEndpoint.AuthEndpoint.register}`, user)
       .pipe(
         tap((tokens: any) =>
-          this.doRegisterUser(user.firstname, user.email, user.password ,JSON.stringify(tokens))
+          this.doRegisterUser(user.firstname, user.lastname ,user.email, user.password ,JSON.stringify(tokens), user.role)
         )
       );
   }

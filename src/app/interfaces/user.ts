@@ -4,4 +4,5 @@ export interface UserReponse {
     lasttname: string;
     email: string;
     password: string;
+    role: string;
 }
