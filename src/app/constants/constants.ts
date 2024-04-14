@@ -10,4 +10,7 @@ export const apiEndpoint = {
     getBookBySearch: `${API_URL}/api/v1/book/search`,
     getIdBook: `${API_URL}/api/v1/book`,
   },
+  UserEndPoint: {
+    getIdUser: `${API_URL}/api/v1/user`
+  }
 };
